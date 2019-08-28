@@ -13,7 +13,7 @@ var dirs = []string{"north", "south", "west", "east"}  // Directions
 var reverseDir = map[string]string{"north": "south", "south": "north", "east": "west", "west": "east"}  // The reverse direction for each direction
 
 // Function to add two cities to each others connection
-func addNeighhbor(city1 string, city2 string, dir string, cityConnects map[string]map[string]string) {
+func addNeighbor(city1 string, city2 string, dir string, cityConnects map[string]map[string]string) {
 	// If no connection for city1, add the connections for it.
 	if (cityConnects[city1] == nil){
 		cityConnects[city1] = map[string]string{"north": city1, "south": city1, "east": city1, "west": city1}
@@ -104,7 +104,7 @@ func main() {
 			dirAndCity := strings.Split(cityDir, "=")
 			dir := dirAndCity[0]
 			city2 := dirAndCity[1]
-			addNeighhbor(city1, city2, dir, cityConnects)
+			addNeighbor(city1, city2, dir, cityConnects)
 		}
 	}
 
